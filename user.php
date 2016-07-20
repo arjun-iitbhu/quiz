@@ -19,10 +19,15 @@
     <?php
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $query = "SELECT * FROM users WHERE (Email = '$username' AND Password = '$password');";
+    $query = "SELECT * FROM users WHERE (Email = '$username');";
+    $query1 = "SELECT * FROM users WHERE (Email = '$username' AND Password = '$password');";
     $result = mysqli_query($connection, $query);
+    $result_pass = mysqli_query($connection, $query1);
     if(mysqli_fetch_row($result)){
-        echo "Welcome Back! ".$username;
+        echo "Welcome Back! ".$username."<br/>";
+        if(!mysqli_fetch_row($result_pass)){
+            echo "Seems like you entered a wrong password! You need to enter the correct password to go further...";
+        }
     } else {
         echo "You are not a registered user.<br/>";
     }
