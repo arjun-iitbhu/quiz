@@ -19,21 +19,30 @@
     $FirstName = $_POST['firstname'];
     $LastName = $_POST['lastname'];
     $Password = $_POST['newpassword'];
+    $message = "Go Back!";
     ?>
-
-    //make the entry into the database
-    <?php $query = "INSERT INTO users (Email, FirstName, LastName, Password)
-                    VALUES ('{$Email}', '{$FirstName}', '{$LastName}', '{$Password}')";
-    mysqli_query($connection, $query);
-    ?>
-    
     <?php print_r($_POST); ?>
     <br/>
     <?php
-    echo "Hello ".$_POST['firstname']."!.<br/>";
+    echo "Hello ".$_POST['firstname']."!<br/>";
     ?>
     <br/>
-    <a href="logout.php">LOGOUT</a>
+    <?php
+    $query_imp = "SELECT * FROM users WHERE (Email = '$Email');";
+    $result = mysqli_query($connection, $query_imp);
+    if(mysqli_fetch_row($result)){
+        echo "Sorry! We already have an account using this email with us... <br/>";
+    } else {
+        //make the entry into the database
+        $query = "INSERT INTO users (Email, FirstName, LastName, Password)
+                    VALUES ('{$Email}', '{$FirstName}', '{$LastName}', '{$Password}')";
+        mysqli_query($connection, $query);
+        echo "Your account has been successfully creted!";
+        $message = "LOGOUT";
+    }
+    ?>
+    <a href="logout.php"><?php echo "$message"?></a>
+
 
 </pre>
 </body>
