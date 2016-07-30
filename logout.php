@@ -1,14 +1,20 @@
+<?php session_start(); ?>
 <?php
-if (count($_POST)>0){
+/*if (count($_POST)>0){
     foreach ($_POST as $k=>$v){
         unset($_POST[$k]);
     }
 }
 header("Location: homepage.php");
+exit;*/
+$_SESSION["username"] = null;
+$_SESSION["id"] = null;
+$_SESSION["newpassword"] = null;
+$_SESSION["password"] = null;
+header("Location: index.php");
 exit;
-
 ?>
-    <!DOCTYPE html>
+  <!--  <!DOCTYPE html>
     <html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
@@ -27,5 +33,5 @@ exit;
 
 
     </body>
-    </html>
-<?php include ("conn_close.php"); ?>
+    </html> 
+<?php include("includes/conn_close.php"); ?>
