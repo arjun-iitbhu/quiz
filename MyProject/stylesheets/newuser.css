@@ -1,0 +1,108 @@
+body {
+    background-color: ghostwhite;
+    font-family: "Tw Cen MT" ;
+}
+.container{
+    display: flex; flex-wrap: wrap;
+}
+.box{
+    text-align: center;
+    height: 30em;
+    width: 90%;
+    position: absolute;
+    left:50%;
+    margin: 4em 0 0 -45% ;
+}
+.dark_blue{
+    background-color: darkblue;
+    align-content: center;
+}
+@media screen and (min-width: 500px){
+    .dark_blue{
+        top:50%;
+        width: 600px;
+        height: 600px;
+        margin: -20em 0 0 -20em;
+    }
+
+}
+@media screen and (min-width: 1024px){
+    .dark_blue{
+        top:50%;
+        width: 600px;
+        height: 600px;
+        margin: -300px 0 0 -300px;
+    }
+}
+.circle{
+    color: white;
+    line-height: 14em;
+    background-color: black;
+    height:13em;
+    width: 13em;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 13em;
+}
+.tag{
+    width: 100%;
+    background-color: lightyellow;
+    height: 15%;
+    font-size: 3em;
+    padding-top: 32px;
+}
+@media screen and (max-width: 500px){
+    .tag{
+        font-size: 2em;
+    }
+}
+.dashboard{
+    width: 100%;
+    background-color: yellow;
+    height: 20%;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+}
+.escape{
+    width: 100%;
+    background-color: orange;
+    height: 20%;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    height: 50px;
+    width: 70%;
+    border-radius: 5px;
+    border: black 2px solid;
+    font-size: 28px;
+    font-family: "Tw Cen MT";
+    text-align: center;
+    line-height: 44px;
+    color: black;
+    margin: auto;
+    align-self: center;
+}
+.button:hover {
+    background-color: #ffffb3;
+    font-size: 28px;
+    font-family: "Tw Cen MT";
+    text-align: center;
+    line-height: 44px;
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+.link{
+    color: black;
+}
+.link:hover{
+    font-style: italic;
+}
+
